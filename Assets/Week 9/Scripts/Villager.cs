@@ -9,12 +9,12 @@ public class Villager : MonoBehaviour
     Animator animator;
 
     bool clickingOnSelf;
-    bool isSelected;
+    protected bool isSelected;
     public GameObject highlight;
 
     protected Vector2 destination;
     Vector2 movement;
-    float speed = 3;
+    protected float speed = 3;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class Villager : MonoBehaviour
         destination = transform.position;
         Selected(false);
     }
-    public void Selected(bool value)
+    public virtual void Selected(bool value)
     {
         isSelected = value;
         highlight.SetActive(isSelected);
