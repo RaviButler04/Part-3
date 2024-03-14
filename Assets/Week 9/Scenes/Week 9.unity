@@ -7617,6 +7617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 6320965441753652661}
+  textMeshProUGUI: {fileID: 541620299}
 --- !u!212 &8099962653790267487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8837,6 +8838,7 @@ MonoBehaviour:
   highlight: {fileID: 1127101254343119421}
   arrowPrefab: {fileID: 7907720046717811147, guid: f9e594c80aae57547813f7fa7e3b995a, type: 3}
   spawnPoint: {fileID: 2026471108}
+  textMeshProUGUI: {fileID: 541620299}
 --- !u!1001 &9099071394577939861
 PrefabInstance:
   m_ObjectHideFlags: 0
