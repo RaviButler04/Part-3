@@ -350,7 +350,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 311115c073f7887408ffb3a0fa1680a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitationalPull: 100
-  planetSize: {fileID: 0}
+  impact: {fileID: 4240624176901755706, guid: 250070febe944814b9bc6291ccc39572, type: 3}
   attractedObjects:
   - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1 &1081927250
@@ -612,7 +612,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 90c5ab36f801c1f40969e87db1aee8fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitationalPull: 200
-  planetSize: {fileID: 0}
+  impact: {fileID: 4240624176901755706, guid: 250070febe944814b9bc6291ccc39572, type: 3}
   attractedObjects:
   - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1 &1849270946
@@ -806,7 +806,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 42c460cd8830ebd429770a239896eb83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitationalPull: 75
-  planetSize: {fileID: 0}
+  impact: {fileID: 4240624176901755706, guid: 250070febe944814b9bc6291ccc39572, type: 3}
   attractedObjects:
   - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1660057539 &9223372036854775807

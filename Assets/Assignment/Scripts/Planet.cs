@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //gravity maths floats
     public float gravitationalPull = 10f;
     public static float gravitationalConstant = 2f;
-    public Transform planetSize;
+    //reference the transform of the planet to get the scale
+    Transform planetSize;
+    //planet size
     float size;
+    //number that, when reached, will trigger planet destruction
     float destroyNum;
-    public static float sizeMultiplier = 100f;
+    //number to multiply size by for destruction calculation
+    public static float sizeMultiplier = 150f;
+    //counter for how many asteroids have collided
     float asteroidCounter = 0f;
+
+    //get reference to impact object
+    public GameObject impact;
+    //gameobject to manipulate instantiated impact
+    protected GameObject instantiatedImpact;
 
     // List to hold attracted objects
     public List<GameObject> attractedObjects = new List<GameObject>();
@@ -78,11 +88,22 @@ public class Planet : MonoBehaviour
         //attractedObjects.Remove(collision.gameObject);
         Destroy(collision.gameObject);
 
+        //increment counter for planet destruction
         asteroidCounter++;
+
+        //call asteroid collision function
+        AsteroidCollision(collision);
     }
 
     private void explode()
     {
         Destroy(gameObject);
     }
+
+    public virtual void AsteroidCollision(Collision2D collision)
+    {
+        //instantiate impact object
+        instantiatedImpact = Instantiate(impact, collision.gameObject.transform.position, Quaternion.identity);
+    }
 }
+
