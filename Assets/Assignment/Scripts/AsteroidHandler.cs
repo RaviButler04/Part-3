@@ -8,7 +8,7 @@ public class AsteroidHandler : MonoBehaviour
     public GameObject asteroid;
 
     //make list of all the planets that will attract the asteroid
-    public List<GravityHandler> planets = new List<GravityHandler>();
+    public List<Planet> planets = new List<Planet>();
 
     // Update is called once per frame
     void Update()
@@ -22,9 +22,9 @@ public class AsteroidHandler : MonoBehaviour
             GameObject instantiatedAsteroid = Instantiate(asteroid, mousePosition, Quaternion.identity);
 
             //add the instantiated prefab to each planet's list of attracted object
-            foreach (var gravityHandler in planets)
+            foreach (var planet in planets)
             {
-                gravityHandler.AddAsteroidToList(instantiatedAsteroid);
+                planet.AddAsteroidToList(instantiatedAsteroid);
             }
         }
     }

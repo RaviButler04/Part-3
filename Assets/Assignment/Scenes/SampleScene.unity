@@ -224,6 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 664951814}
+  - component: {fileID: 664951815}
   - component: {fileID: 664951813}
   - component: {fileID: 664951812}
   - component: {fileID: 664951811}
@@ -247,10 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1cd9405f776b3439a099e9c95d0f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravitationalPull: 100
-  gravitationalConstant: 2
-  attractedObjects:
-  - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!58 &664951811
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -376,10 +373,26 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.72, y: -1.22, z: 0}
   m_LocalScale: {x: 0.1133534, y: 0.1133534, z: 0.1133534}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664951815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664951809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f100c604a36a8c47833803beeba81e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravitationalPull: 100
+  planetSize: {fileID: 0}
+  attractedObjects:
+  - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1 &1081927250
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +472,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.287, y: 0.287, z: 0.287}
+  m_LocalScale: {x: 0.3047653, y: 0.3047653, z: 0.3047653}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -473,6 +486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1737575964}
+  - component: {fileID: 1737575965}
   - component: {fileID: 1737575963}
   - component: {fileID: 1737575962}
   - component: {fileID: 1737575961}
@@ -496,10 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1cd9405f776b3439a099e9c95d0f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravitationalPull: 200
-  gravitationalConstant: 2
-  attractedObjects:
-  - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!58 &1737575961
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -625,10 +635,26 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.48, y: -2.49, z: 0}
   m_LocalScale: {x: 0.15111631, y: 0.15111631, z: 0.15111631}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1737575965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737575959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2843272b02e0e1b4db16157a67858879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravitationalPull: 200
+  planetSize: {fileID: 0}
+  attractedObjects:
+  - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1 &1849270946
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,9 +701,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroid: {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
   planets:
-  - {fileID: 3142321575216039615}
-  - {fileID: 664951810}
-  - {fileID: 1737575960}
+  - {fileID: 4089739531801275177}
+  - {fileID: 664951815}
+  - {fileID: 1737575965}
 --- !u!4 &1913055672143648746
 Transform:
   m_ObjectHideFlags: 0
@@ -689,7 +715,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.59, y: 2.73, z: 0}
   m_LocalScale: {x: 0.08365678, y: 0.08365678, z: 0.08365678}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -729,10 +755,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913055672143648746}
+  - component: {fileID: 4089739531801275177}
   - component: {fileID: 3306662613677473477}
   - component: {fileID: 2224422125966427033}
   - component: {fileID: 4089739531801275176}
-  - component: {fileID: 3142321575216039615}
   m_Layer: 0
   m_Name: Red Planet
   m_TagString: Untagged
@@ -740,22 +766,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3142321575216039615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2897250678872452643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1cd9405f776b3439a099e9c95d0f7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravitationalPull: 75
-  gravitationalConstant: 2
-  attractedObjects:
-  - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!212 &3306662613677473477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -843,6 +853,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.02724184}
   serializedVersion: 2
   m_Radius: 12.85574
+--- !u!114 &4089739531801275177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897250678872452643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750df34380285df49a58805ce33da8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravitationalPull: 75
+  planetSize: {fileID: 0}
+  attractedObjects:
+  - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
