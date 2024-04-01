@@ -12,7 +12,7 @@ public class BluePlanet : Planet
 
         //get sprite renderer of instantiated impact
         SpriteRenderer sr = base.instantiatedImpact.GetComponent<SpriteRenderer>();
-        //change color to red
+        //change color to blue
         sr.color = blue;
     }
 }
