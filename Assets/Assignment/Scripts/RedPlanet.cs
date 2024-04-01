@@ -11,6 +11,7 @@ public class RedPlanet : Planet
 
         //get sprite renderer of instantiated impact
         SpriteRenderer sr = base.instantiatedImpact.GetComponent<SpriteRenderer>();
+
         //change color to red
         sr.color = Color.red;
     }

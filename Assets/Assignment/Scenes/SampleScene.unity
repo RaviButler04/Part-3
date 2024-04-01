@@ -391,6 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravitationalPull: 100
   impact: {fileID: 4240624176901755706, guid: 250070febe944814b9bc6291ccc39572, type: 3}
+  explosion: {fileID: 6964704769515958798, guid: 29a20cc668ac5394cb71c4af6083d592, type: 3}
   attractedObjects:
   - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1 &1081927250
@@ -653,6 +654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravitationalPull: 200
   impact: {fileID: 4240624176901755706, guid: 250070febe944814b9bc6291ccc39572, type: 3}
+  explosion: {fileID: 6964704769515958798, guid: 29a20cc668ac5394cb71c4af6083d592, type: 3}
   attractedObjects:
   - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1 &1849270946
@@ -867,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravitationalPull: 75
   impact: {fileID: 4240624176901755706, guid: 250070febe944814b9bc6291ccc39572, type: 3}
+  explosion: {fileID: 6964704769515958798, guid: 29a20cc668ac5394cb71c4af6083d592, type: 3}
   attractedObjects:
   - {fileID: 8293329774512507738, guid: 3185dfedb828b6646a3494a16b4e2669, type: 3}
 --- !u!1660057539 &9223372036854775807

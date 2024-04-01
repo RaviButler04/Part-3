@@ -17,9 +17,13 @@ public class Planet : MonoBehaviour
     public static float sizeMultiplier = 150f;
     //counter for how many asteroids have collided
     float asteroidCounter = 0f;
+    //float for shrinkrate
+    float shrinkRate = 0.000000000001f;
 
     //get reference to impact object
     public GameObject impact;
+    //get reference to explosion object
+    public GameObject explosion;
     //gameobject to manipulate instantiated impact
     protected GameObject instantiatedImpact;
 
@@ -97,13 +101,30 @@ public class Planet : MonoBehaviour
 
     private void explode()
     {
-        Destroy(gameObject);
+        StartCoroutine(planetExplosion());
+        //Destroy(gameObject);
     }
 
     public virtual void AsteroidCollision(Collision2D collision)
     {
         //instantiate impact object
         instantiatedImpact = Instantiate(impact, collision.gameObject.transform.position, Quaternion.identity);
+    }
+
+    IEnumerator planetExplosion()
+    {
+        while(transform.localScale.x > 0)
+        {
+            Vector3 localScale = transform.localScale;
+            localScale.x = localScale.x - shrinkRate;
+            localScale.y = localScale.y - shrinkRate;
+            transform.localScale = localScale;
+            shrinkRate = shrinkRate + 0.00000000001f;
+            yield return null;
+        }
+        Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+        yield return null;
+        Destroy(gameObject);
     }
 }
 
