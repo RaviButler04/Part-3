@@ -37,7 +37,7 @@ public class Planet : MonoBehaviour
         destroyNum = Mathf.Round(size * sizeMultiplier);
     }
 
-    void Update()
+    protected void Update()
     {
         if(asteroidCounter >= destroyNum)
         {
