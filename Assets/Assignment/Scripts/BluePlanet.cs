@@ -6,8 +6,9 @@ public class BluePlanet : Planet
 {
     float asteroidNum = 0;
     Color blue = new Color(0, 255, 250);
-    Color changedColor = new Color(224, 131, 0);
+    static Color changedColor = new Color(224, 131, 0);
     //public Sprite newPlanetSprite;
+    static SpriteRenderer planetSR;
 
     public override void AsteroidCollision(Collision2D collision)
     {
@@ -15,6 +16,7 @@ public class BluePlanet : Planet
 
         //get sprite renderer of instantiated impact
         SpriteRenderer sr = base.instantiatedImpact.GetComponent<SpriteRenderer>();
+        planetSR = GetComponent<SpriteRenderer>();
 
         //change color to blue
         sr.color = blue;
@@ -30,10 +32,8 @@ public class BluePlanet : Planet
         }
     }
 
-    private void changeColor()
+    private static void changeColor()
     {
-        SpriteRenderer planetSR = GetComponent<SpriteRenderer>();
         planetSR.color = changedColor;
-        //planetSR.sprite = newPlanetSprite;
     }
 }
