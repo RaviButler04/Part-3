@@ -13,7 +13,7 @@ public class RedPlanet : Planet
         base.AsteroidCollision(collision);
 
         //get sprite renderer of instantiated impact
-        SpriteRenderer sr = base.instantiatedImpact.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = instantiatedImpact.GetComponent<SpriteRenderer>();
 
         //change color to red
         sr.color = Color.red;

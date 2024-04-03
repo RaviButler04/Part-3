@@ -22,7 +22,7 @@ public class BluePlanet : Planet
         base.AsteroidCollision(collision);
 
         //get sprite renderer of instantiated impact
-        SpriteRenderer sr = base.instantiatedImpact.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = instantiatedImpact.GetComponent<SpriteRenderer>();
         planetSR = GetComponent<SpriteRenderer>();
 
         //change color to blue

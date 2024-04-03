@@ -33,7 +33,7 @@ public class Planet : MonoBehaviour
     public GameObject explosion;
 
     //gameobject to manipulate instantiated impact
-    protected GameObject instantiatedImpact;
+    protected  GameObject instantiatedImpact;
 
     // List to hold attracted objects
     public List<GameObject> attractedObjects = new List<GameObject>();
