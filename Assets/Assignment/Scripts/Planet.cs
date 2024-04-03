@@ -7,23 +7,31 @@ public class Planet : MonoBehaviour
     //gravity maths floats
     public float gravitationalPull = 10f;
     public static float gravitationalConstant = 2f;
+
     //reference the transform of the planet to get the scale
     Transform planetSize;
+
     //planet size
     float size;
+
     //number that, when reached, will trigger planet destruction
     float destroyNum;
+
     //number to multiply size by for destruction calculation
     public static float sizeMultiplier = 150f;
+
     //counter for how many asteroids have collided
     float asteroidCounter = 0f;
+
     //float for shrinkrate
     float shrinkRate = 0.000000000001f;
 
     //get reference to impact object
     public GameObject impact;
+
     //get reference to explosion object
     public GameObject explosion;
+
     //gameobject to manipulate instantiated impact
     protected GameObject instantiatedImpact;
 
@@ -32,13 +40,17 @@ public class Planet : MonoBehaviour
 
     void Start()
     {
+        //get planet transform and scale
         planetSize = GetComponent<Transform>();
         size = planetSize.localScale.x;
+
+        //calculate how many asteroids need to collide with the planet before it explodes - based off of planet scale.
         destroyNum = Mathf.Round(size * sizeMultiplier);
     }
 
     protected void Update()
     {
+        //trigger explode function after number of asteroids is equal to the destroy number
         if(asteroidCounter >= destroyNum)
         {
             explode();
@@ -62,6 +74,7 @@ public class Planet : MonoBehaviour
         //attract each object in list
         foreach (var attractedObject in attractedObjects)
         {
+            //check that there is an object in the list
             if (attractedObject != null)
             {
                 //get rigidbody of each onject in list
@@ -73,10 +86,10 @@ public class Planet : MonoBehaviour
                     //get direction from planet to asteroid
                     Vector2 direction = (transform.position - attractedObject.transform.position).normalized;
 
-                    //get distancce from planet to asteroid
+                    //get distance from planet to asteroid
                     float distance = Vector2.Distance(transform.position, attractedObject.transform.position);
 
-                    //gravity math used is Newton's Law of Universal Gravitation. Found all of this using a gravity calculator online
+                    //gravity math used is Newton's Law of Universal Gravitation. I used this video: https://youtu.be/fy-LcFZTTZU?si=I9HEB0xc_EnDR24e. Also this: https://www.physicsclassroom.com/class/circles/Lesson-3/Newton-s-Law-of-Universal-Gravitation
                     float forceMagnitude = gravitationalConstant * (attractedRigidbody.mass * GetComponent<Rigidbody2D>().mass) / Mathf.Pow(distance, 2);
                     Vector2 force = direction * forceMagnitude * gravitationalPull;
 
@@ -99,10 +112,10 @@ public class Planet : MonoBehaviour
         AsteroidCollision(collision);
     }
 
+    //start explosion coroutine
     private void explode()
     {
         StartCoroutine(planetExplosion());
-        //Destroy(gameObject);
     }
 
     public virtual void AsteroidCollision(Collision2D collision)
@@ -111,10 +124,12 @@ public class Planet : MonoBehaviour
         instantiatedImpact = Instantiate(impact, collision.gameObject.transform.position, Quaternion.identity);
     }
 
+    //explosion coroutine
     IEnumerator planetExplosion()
     {
         while(transform.localScale.x > 0)
         {
+            //exponentially shrink planet
             Vector3 localScale = transform.localScale;
             localScale.x = localScale.x - shrinkRate;
             localScale.y = localScale.y - shrinkRate;
@@ -122,8 +137,10 @@ public class Planet : MonoBehaviour
             shrinkRate = shrinkRate + 0.00000000001f;
             yield return null;
         }
+        //instantiate explosion object
         Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
         yield return null;
+        //destroy self
         Destroy(gameObject);
     }
 }

@@ -18,6 +18,7 @@ public class AsteroidHandler : MonoBehaviour
         {
             //get location of mouse position
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
             //instantiate asteroid and make it a gameobject variable
             GameObject instantiatedAsteroid = Instantiate(asteroid, mousePosition, Quaternion.identity);
 
